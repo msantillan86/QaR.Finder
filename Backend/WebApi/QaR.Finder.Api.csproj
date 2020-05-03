@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application\QaR.Finder.Application.csproj" />
-    <ProjectReference Include="..\Infraestructure\QaR.Finder.Infrastructure.csproj" />
+    <ProjectReference Include="..\Infrastructure\QaR.Finder.Infrastructure.csproj" />
   </ItemGroup>
 
 

@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{CE18
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QaR.Finder.Application", "Backend\Application\QaR.Finder.Application.csproj", "{AE08E3EA-D54C-4CC2-AFFA-1B562951C614}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QaR.Finder.Infrastructure", "Backend\Infraestructure\QaR.Finder.Infrastructure.csproj", "{2C279935-3356-4B60-8B44-F6BD97F05D23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QaR.Finder.Infrastructure", "Backend\Infrastructure\QaR.Finder.Infrastructure.csproj", "{2C279935-3356-4B60-8B44-F6BD97F05D23}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QaR.Finder.Domain", "Backend\Domain\QaR.Finder.Domain.csproj", "{4E8EBBE8-DEE8-463E-8B8C-1049F3EEFA26}"
 EndProject

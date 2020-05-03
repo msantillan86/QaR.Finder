@@ -1,11 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-using AutoMapper;
-using MediatR;
+﻿using AutoMapper;
 using FluentValidation;
+using MediatR;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 namespace QaR.Finder.Application
 {
@@ -15,7 +12,7 @@ namespace QaR.Finder.Application
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            
+
             //Todo esto es MediatR
             services.AddMediatR(Assembly.GetExecutingAssembly());
             //comportamientos, pero esta pendiente

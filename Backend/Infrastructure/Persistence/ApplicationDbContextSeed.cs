@@ -11,9 +11,9 @@ namespace QaR.Finder.Infrastructure.Persistence
         {
             if (!context.Items.Any())
             {
-                context.Items.Add(new Item { Id = Guid.NewGuid().ToString(), Text = "Item 1", Description = "This is an item description." });
-                context.Items.Add(new Item { Id = Guid.NewGuid().ToString(), Text = "Item 2", Description = "This is an item description." });
-                context.Items.Add(new Item { Id = Guid.NewGuid().ToString(), Text = "Item 3", Description = "This is an item description." });
+                context.Items.Add(new Item { Text = "Item 1", Description = "This is an item description." });
+                context.Items.Add(new Item { Text = "Item 2", Description = "This is an item description." });
+                context.Items.Add(new Item { Text = "Item 3", Description = "This is an item description." });
 
                 await context.SaveChangesAsync();
             }

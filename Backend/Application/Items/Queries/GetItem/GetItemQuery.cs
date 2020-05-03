@@ -8,7 +8,7 @@ namespace QaR.Finder.Application.Items.Queries.GetItem
 {
     public class GetItemQuery : IRequest<ItemDTO>
     {
-        public string ItemId { get; set; }
+        public int ItemId { get; set; }
     }
 
     public class GetItemQueryHandler : IRequestHandler<GetItemQuery, ItemDTO>
@@ -24,7 +24,7 @@ namespace QaR.Finder.Application.Items.Queries.GetItem
 
         public async Task<ItemDTO> Handle(GetItemQuery request, CancellationToken cancellationToken)
         {
-            
+
             var entity = await _context.Items.FindAsync(request.ItemId);
             var vm = _mapper.Map<ItemDTO>(entity);
 

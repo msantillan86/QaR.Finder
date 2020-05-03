@@ -28,7 +28,7 @@ namespace QaR.Finder.Application.Items.Queries.GetItemsQuery
             var entity = await _context.Items
                 .ProjectTo<ItemDTO>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
-            
+
 
             return await Task.FromResult(entity);
         }

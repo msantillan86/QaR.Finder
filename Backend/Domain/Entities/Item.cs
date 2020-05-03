@@ -4,7 +4,7 @@ namespace QaR.Finder.Domain.Entities
 {
     public class Item
     {
-        public string Id { get; set; }
+        public int ItemId { get; set; }
 
         [Required]
         public string Text { get; set; }

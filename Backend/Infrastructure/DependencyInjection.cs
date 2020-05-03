@@ -1,8 +1,8 @@
-﻿using QaR.Finder.Infrastructure.Persistence;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using QaR.Finder.Application.Common.Interfaces;
+using QaR.Finder.Infrastructure.Persistence;
 using QaR.Finder.Infrastructure.Services;
 
 namespace QaR.Finder.Infrastructure

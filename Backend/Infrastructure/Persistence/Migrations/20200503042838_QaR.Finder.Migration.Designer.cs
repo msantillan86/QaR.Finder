@@ -9,7 +9,7 @@ using QaR.Finder.Infrastructure.Persistence;
 namespace QaR.Finder.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200503002017_QaR.Finder.Migration")]
+    [Migration("20200503042838_QaR.Finder.Migration")]
     partial class QaRFinderMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,8 +22,10 @@ namespace QaR.Finder.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("QaR.Finder.Domain.Entities.Item", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("ItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -33,7 +35,7 @@ namespace QaR.Finder.Infrastructure.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ItemId");
 
                     b.ToTable("Items");
                 });

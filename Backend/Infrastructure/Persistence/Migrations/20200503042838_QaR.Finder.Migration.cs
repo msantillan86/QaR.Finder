@@ -10,13 +10,14 @@ namespace QaR.Finder.Infrastructure.Persistence.Migrations
                 name: "Items",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    ItemId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Text = table.Column<string>(nullable: false),
                     Description = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Items", x => x.Id);
+                    table.PrimaryKey("PK_Items", x => x.ItemId);
                 });
         }
 

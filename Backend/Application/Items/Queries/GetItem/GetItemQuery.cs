@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using MediatR;
+using QaR.Finder.Application.Common.Exceptions;
 using QaR.Finder.Application.Common.Interfaces;
+using QaR.Finder.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -27,6 +29,11 @@ namespace QaR.Finder.Application.Items.Queries.GetItem
 
             var entity = await _context.Items.FindAsync(request.ItemId);
             var vm = _mapper.Map<ItemDTO>(entity);
+
+            if (entity == null)
+            {
+                throw new NotFoundException(nameof(ItemDTO), request.ItemId);
+            }
 
             return await Task.FromResult(vm);
         }

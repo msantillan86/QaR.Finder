@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.CodeAnalysis.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using QaR.Finder.Api.Filter;
 using QaR.Finder.Application;
 using QaR.Finder.Infrastructure;
 
@@ -24,7 +26,7 @@ namespace QaR.Finder.Api
             services.AddApplication();
             services.AddInfrastructure(Configuration);
 
-            services.AddControllers();
+            services.AddControllers(options => options.Filters.Add(new ApiExceptionFilter()));
 
             services.AddSwaggerGen(c =>
             {

@@ -3,6 +3,7 @@ using MediatR;
 using QaR.Finder.Application.Common.Interfaces;
 using QaR.Finder.Application.Items.Queries.GetItem;
 using QaR.Finder.Domain.Entities;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -27,17 +28,25 @@ namespace QaR.Finder.Application.Items.Commands.AddItem
 
         public async Task<ItemDTO> Handle(AddItemCommand request, CancellationToken cancellationToken)
         {
-            var entity = new Item
+            try
             {
-                Description = request.Description,
-                Text = request.Text
-            };
+                var entity = new Item
+                {
+                    Description = request.Description,
+                    Text = request.Text
+                };
 
-            _context.Items.Add(entity);
+                _context.Items.Add(entity);
 
-            await _context.SaveChangesAsync(cancellationToken);
+                await _context.SaveChangesAsync(cancellationToken);
 
-            return _mapper.Map<ItemDTO>(entity);
+                return _mapper.Map<ItemDTO>(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
     }
 }

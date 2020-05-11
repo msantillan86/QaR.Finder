@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using QaR.Finder.Domain.Common;
+using System.ComponentModel.DataAnnotations;
 
 namespace QaR.Finder.Domain.Entities
 {
-    public class Item
+    public class Item : CamposAuditoria
     {
         public int ItemId { get; set; }
 

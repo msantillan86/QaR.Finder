@@ -2,7 +2,6 @@
 using MediatR;
 using QaR.Finder.Application.Common.Exceptions;
 using QaR.Finder.Application.Common.Interfaces;
-using QaR.Finder.Domain.Entities;
 using System.Threading;
 using System.Threading.Tasks;
 

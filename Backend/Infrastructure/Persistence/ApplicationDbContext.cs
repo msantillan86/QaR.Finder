@@ -12,12 +12,13 @@ namespace QaR.Finder.Infrastructure.Persistence
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
-        //private readonly ICurrentUserService _currentUserService; //todo, por ahora no lo implemento
+        private readonly ICurrentUserService _currentUserService;
         private IDbContextTransaction _currentTransaction;
         private readonly IDateTime _dateTime;
 
-        public ApplicationDbContext(DbContextOptions options, IDateTime dateTime) : base(options)
+        public ApplicationDbContext(DbContextOptions options, ICurrentUserService currentUserService, IDateTime dateTime) : base(options)
         {
+            _currentUserService = currentUserService;
             _dateTime = dateTime;
         }
 
@@ -30,11 +31,11 @@ namespace QaR.Finder.Infrastructure.Persistence
                 switch (entry.State)
                 {
                     case EntityState.Added:
-                        entry.Entity.CreadoPor = "pendiente";
+                        entry.Entity.CreadoPor = _currentUserService.UserId;
                         entry.Entity.CreadoFecha = _dateTime.Now;
                         break;
                     case EntityState.Modified:
-                        entry.Entity.ActualizadoPor = "pendiente";
+                        entry.Entity.ActualizadoPor = _currentUserService.UserId;
                         entry.Entity.ActualizadoFecha = _dateTime.Now;
                         break;
                 }

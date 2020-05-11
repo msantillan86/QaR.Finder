@@ -6,8 +6,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using QaR.Finder.Api.Filter;
+using QaR.Finder.Api.Services;
 using QaR.Finder.Application;
+using QaR.Finder.Application.Common.Interfaces;
 using QaR.Finder.Infrastructure;
+using QaR.Finder.Infrastructure.Persistence;
 
 namespace QaR.Finder.Api
 {
@@ -25,6 +28,11 @@ namespace QaR.Finder.Api
         {
             services.AddApplication();
             services.AddInfrastructure(Configuration);
+
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
+            services.AddHttpContextAccessor(); //esto es para que funcione lo de CurrentUserService
+
+            services.AddHealthChecks().AddDbContextCheck<ApplicationDbContext>();
 
             services.AddControllers(options => options.Filters.Add(new ApiExceptionFilter()));
 

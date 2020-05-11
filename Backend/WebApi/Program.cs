@@ -13,7 +13,6 @@ namespace QaR.Finder.Api
     {
         public async static Task Main(string[] args)
         {
-            //CreateHostBuilder(args).Build().Run();
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())

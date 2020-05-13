@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QaR.Finder.Application.Items.Commands.AddItem;
 using QaR.Finder.Application.Items.Queries.GetItem;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace QaR.Finder.Api.Controllers
 {
+    [Authorize]
     public class ItemController : ApiController
     {
         [HttpGet("{id}")]

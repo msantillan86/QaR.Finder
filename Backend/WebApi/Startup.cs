@@ -42,24 +42,38 @@ namespace QaR.Finder.Api
                 options.SuppressModelStateInvalidFilter = true;
             }); //esto es para que el 400 devuelva bien
 
+            //https://identityserver4.readthedocs.io/en/latest/quickstarts/1_client_credentials.html
+            services.AddAuthentication("JWT").AddJwtBearer("JWT", options =>
+            {
+                options.Authority = "https://localhost:5002"; //pasar al appsettings.json
+                options.RequireHttpsMetadata = false;
+                options.Audience = "QaR.Finder.Api";
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "QAR.FINDER API", Version = "v1" });
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                c.AddSecurityDefinition("JWT", new OpenApiSecurityScheme
                 {
-                    Description = "Type into the textbox: Bearer {your JWT token}.",
+                    Type = SecuritySchemeType.ApiKey,
                     Name = "Authorization",
                     In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey,
-                    Scheme = "Bearer"
+                    Description = "Escribir Bearer {token}"
                 });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                   {
+                     new OpenApiSecurityScheme
+                     {
+                       Reference = new OpenApiReference
+                       {
+                         Type = ReferenceType.SecurityScheme,
+                         Id = "JWT"
+                       }
+                      },
+                      new string[] { }
+                    }
+                  });
             });
-
-            services.AddAuthentication(o =>
-            {
-                o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

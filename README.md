@@ -12,7 +12,11 @@ Por defecto la base de datos esta configurada "inmemory" es decir que los datos 
 Revisen en el mismo archivo si "DefaultConnection" tiene un connection string válido, para eso pueden usar el MS SQL Server Managment Studio.
 
 Una vez que chequearon eso, la idea ahora es hacer la migración.
-Para eso necesitan ejecutar el siguiente código en la raiz del proyecto.
+Antes de migrar, es necesario instalar dotnet ef con el siguiente comando
+
+`dotnet tool install --global dotnet-ef`
+
+Luego necesitan ejecutar el siguiente código en la raiz del proyecto.
 
 `dotnet ef migrations add "QaR.Finder.Migration" --project Backend\Infrastructure\QaR.Finder.Infrastructure.csproj --startup-project Backend\WebApi\QaR.Finder.Api.csproj --output-dir Persistence\Migrations`
 

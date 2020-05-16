@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QaR.Finder.Api.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ItemController : ApiController
     {
         [HttpGet("{id}")]

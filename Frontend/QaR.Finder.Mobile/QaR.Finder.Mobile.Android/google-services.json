@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "888409301195",
+    "firebase_url": "https://qar-finder.firebaseio.com",
+    "project_id": "qar-finder",
+    "storage_bucket": "qar-finder.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888409301195:android:3007b833a95cbbe4a53b4e",
+        "android_client_info": {
+          "package_name": "com.PushNotification.QarFinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888409301195-os8ma3e5lsb7397r20ct82hpl8qc54du.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3E-XpKc19-df0lkwZHaHzQ8grlmFhka8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888409301195-os8ma3e5lsb7397r20ct82hpl8qc54du.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

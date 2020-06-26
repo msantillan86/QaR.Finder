@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="QaR.Finder.Mobile.Views.Paginas.PaginaMenuPrincipal"
+             Title="QaR Finder">
+
+    <ScrollView>   
+        <StackLayout Padding="30" Spacing="10">
+            <StackLayout>
+                <Label Text="Nombre" FontSize="Large"></Label>
+                <Entry x:Name="entryNombre"></Entry>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Apellido" FontSize="Large"></Label>
+                <Entry x:Name="entryApellido"></Entry>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Edad" FontSize="Large"></Label>
+                <Entry x:Name="entryEdad"></Entry>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Email" FontSize="Large"></Label>
+                <Entry x:Name="entryEmail"></Entry>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Direccion" FontSize="Large"></Label>
+                <Entry x:Name="entryDireccion"></Entry>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Altura" FontSize="Large"></Label>
+                <Entry x:Name="entryAltura"></Entry>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Piso" FontSize="Large"></Label>
+                <Entry x:Name="entryPiso"></Entry>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Departamento" FontSize="Large"></Label>
+                <Entry x:Name="entryDepartamento"></Entry>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
